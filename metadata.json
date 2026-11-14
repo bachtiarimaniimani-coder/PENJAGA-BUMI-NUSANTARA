@@ -1,0 +1,8 @@
+{
+  "name": "PENJAGA BUMI NUSANTARA",
+  "description": "Game Edukasi 3D PAI \u0026 BP Fase C: Merawat Alam Menjaga Masa Depan — Karya Bachtiar Imani (PGRI Cabang Girimarto, Kabupaten Wonogiri).",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

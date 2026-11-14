@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #071318;
+    color: #f8fafc;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono-num {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Tactile Claymorphic 3D Buttons (No backdrop-filter over WebGL!) */
+.btn-clay-emerald {
+  background: linear-gradient(180deg, #10b981 0%, #059669 100%);
+  box-shadow: 0 5px 0 #065f46, 0 8px 16px rgba(5, 150, 105, 0.35), inset 0 2px 1px rgba(255, 255, 255, 0.35);
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 140ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-clay-emerald:hover:not(:disabled) {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 6px 0 #065f46, 0 10px 20px rgba(5, 150, 105, 0.45), inset 0 2px 1px rgba(255, 255, 255, 0.45);
+}
+.btn-clay-emerald:active:not(:disabled) {
+  transform: translateY(3px) scale(0.96);
+  box-shadow: 0 2px 0 #065f46, 0 4px 8px rgba(5, 150, 105, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+.btn-clay-amber {
+  background: linear-gradient(180deg, #f59e0b 0%, #d97706 100%);
+  box-shadow: 0 5px 0 #92400e, 0 8px 16px rgba(217, 119, 6, 0.35), inset 0 2px 1px rgba(255, 255, 255, 0.35);
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 140ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-clay-amber:hover:not(:disabled) {
+  transform: translateY(-1px) scale(1.01);
+}
+.btn-clay-amber:active:not(:disabled) {
+  transform: translateY(3px) scale(0.96);
+  box-shadow: 0 2px 0 #92400e, 0 4px 8px rgba(217, 119, 6, 0.25);
+}
+
+.btn-clay-slate {
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  box-shadow: 0 4px 0 #020617, 0 6px 12px rgba(2, 6, 23, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.14);
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 140ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-clay-slate:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+.btn-clay-slate:active:not(:disabled) {
+  transform: translateY(2px) scale(0.96);
+  box-shadow: 0 1px 0 #020617, 0 2px 6px rgba(2, 6, 23, 0.35);
+}
+
+/* Stitched Recycled Parchment Box for Narrative & Prologue */
+.parchment-box {
+  background-color: #fdf6e3;
+  background-image: radial-gradient(#e5d5b5 1px, transparent 1px);
+  background-size: 16px 16px;
+  color: #292524;
+  border: 3px dashed #b48a5a;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45), inset 0 0 24px rgba(180, 138, 90, 0.18);
+}
+
+/* Tactile Wooden Letter Tile (Level 2) */
+.wood-tile {
+  background: linear-gradient(180deg, #fde68a 0%, #f59e0b 100%);
+  color: #451a03;
+  border: 2px solid #b45309;
+  box-shadow: 0 5px 0 #78350f, inset 0 2px 1px rgba(255, 255, 255, 0.65);
+  transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 120ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.wood-tile:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+.wood-tile:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #78350f, inset 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+/* Nusantara Classical Border for Piagam Ikrar (Page 4) */
+.piagam-frame {
+  background: #fffdf7;
+  color: #1c1917;
+  border: 6px double #b45309;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 0 3px #fef3c7, inset 0 0 0 6px #d97706;
+}
+
+/* Immediate Visual Answer Feedback Animations */
+@keyframes feedbackPop {
+  0% {
+    opacity: 0.4;
+    transform: scale(0.92) translateY(-4px);
+  }
+  65% {
+    opacity: 1;
+    transform: scale(1.03) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes feedbackShake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-7px);
+  }
+  40% {
+    transform: translateX(7px);
+  }
+  60% {
+    transform: translateX(-5px);
+  }
+  80% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes screenFlashFade {
+  0% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Print Rules for Clean A4 Piagam Ikrar Autentik */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    overflow: visible !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only-container {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+  }
+
+  .piagam-frame {
+    box-shadow: none !important;
+    border: 4px double #92400e !important;
+    page-break-inside: avoid;
+  }
+}

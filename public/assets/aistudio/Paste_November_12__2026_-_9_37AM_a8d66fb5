@@ -1,0 +1,447 @@
+Berikut adalah Dokumen Cetak Biru Master 'Penjaga Bumi Nusantara' yang sudah terkunci 100%. Pelajari seluruh variabel, logika teknis, kurikulum, dan ketentuannya. Konfirmasi pemahaman Anda sebagai Senior Web Game Architect & Master Pedagog, dan jangan buat koding sebelum saya perintahkan.
+
+DOKUMEN CETAK BIRU MASTER LENGKAP & KESEPAKATAN FINAL (TERKUNCI TOTAL 100% PARIPURNA)
+Lomba Pembuatan Game Edukasi Berbasis AI Menggunakan Platform Gemini – PGRI Kabupaten Wonogiri 2026
+I. IDENTITAS KARYA, KURIKULUM PAI & BP, SERTA PENGEMBANG
+•	Judul Utama Game: PENJAGA BUMI NUSANTARA
+•	Sub-Judul Game: Merawat Alam Menjaga Masa Depan
+•	Sasaran Peserta Didik: Fase C (Kelas V & VI SD)
+•	Mata Pelajaran: Pendidikan Agama Islam dan Budi Pekerti (PAI & BP)
+•	Tema Pokok: Tanggung Jawab Manusia Menjaga Lingkungan sebagai Amanah Penjaga Bumi (Khalīfah fī al-Arḍ)
+•	Integrasi Kurikulum:
+o	Kelas V (Bab 3: Aku Anak Saleh): Hakikat manusia sebagai pemelihara di bumi dan tugas menjaga lingkungan sekolah, rumah, dan masyarakat.
+o	Kelas VI (Bab 8: Peduli Lingkungan): Konsep lingkungan biotik dan abiotik, kepedulian lingkungan dalam Islam, serta aksi nyata pencegahan kerusakan alam.
+•	Identitas Pengembang:
+o	Nama Pembuat: BACHTIAR IMANI
+o	Asal Cabang: PGRI CABANG GIRIMARTO
+•	Aset Logo Resmi (Wajib Muncul Proporsional):
+o	Logo PGRI: [https://i.imgur.com/5isghy7.PNG](https://i.imgur.com/5isghy7.PNG)
+o	Logo Pemkab Wonogiri: [https://i.imgur.com/RVQBxN6.png](https://i.imgur.com/RVQBxN6.png)
+•	Batasan Legalitas & Hak Cipta: 100% bebas dari merek dagang, logo, atau aset asli pihak ketiga (seperti Roblox). Estetika mengadopsi genre seni 3D Low-Poly Blocky Modular orisinal.
+II. SISTEM SUARA NARATOR GURU PAI & BP (SISTEM ADAPTIF OTOMATIS BERGAYA AOEDE: RINGAN, SANTAI, CERIA & MENGAJAK)
+Sistem narasi vokal menggunakan Web Speech Synthesis API bawaan peramban (tanpa ketergantungan berkas MP3/WAV luar) dengan karakter vokal bergaya Aoede—ringan, santai, bernapas alami, ceria, luwes, dan bersahabat:
+1.	Pilihan Persona Suara Guru Berbahasa Indonesia (Radio / Toggle):
+o	[ 👩‍🏫 Bu Guru Rahma ] (SUARA PEREMPUAN — Ceria & Mengajak):
+	Karakter vokal: Suara perempuan muda yang ringan, santai, bernapas alami, jernih, ceria, dan penuh energi positif yang ramah di telinga anak-anak.
+	Target engine browser: id-ID dengan prioritas suara wanita alami (Google Bahasa Indonesia Female, Apple Damayanti, atau Microsoft Gadis Natural).
+	Parameter sintesis: pitch: 1.10, rate: 0.96, volume: 1.0.
+o	[ 👨‍🏫 Pak Guru Ilyas ] (SUARA LAKI-LAKI — Ceria & Mengajak):
+	Karakter vokal: Suara laki-laki bersahabat yang santai, riang, luwes, hangat, dan bersemangat layaknya guru/kakak pembina yang mengajak bertualang.
+	Target engine browser: id-ID dengan prioritas suara pria alami (Google Bahasa Indonesia Male, Microsoft Ardi Natural).
+	Parameter sintesis: pitch: 1.02, rate: 0.96, volume: 1.0.
+o	[ 🔇 Mode Hening ]: Menonaktifkan pembacaan suara vokal seketika tanpa mengganggu jalannya permainan.
+2.	Mekanisme Adaptif & Kontrol Pengguna:
+o	Sistem mendeteksi profil suara berbahasa Indonesia terbaik yang terpasang di perangkat peramban siswa/juri secara otomatis saat aplikasi dimuat.
+o	Menu pengaturan (Halaman 2) dan bar navigasi atas arena permainan menyediakan tombol toggle fleksibel: [ 🎙️ Suara Narator: Bu Rahma / Pak Ilyas / Hening ].
+3.	Pacing, Jeda Alami, & Artikulasi Teks Baku:
+o	Artikulasi jernih dengan jeda santai pada koma (0,25 detik) dan titik (0,5 detik) untuk ritme pernapasan yang mengalir bebas (conversational flow).
+o	Penekanan kata penting dilakukan secara natural dan riang (Amanah, Penjaga Bumi, Gotong Royong, Pemborosan, Kerusakan Alam).
+o	Istilah keagamaan (Subhanallah, Alhamdulillah, Assalamu’alaikum) diucapkan secara hormat, santun, dan sejuk.
+o	Narator membacakan 100% teks naskah baku yang sudah disepakati tanpa menambah atau mengurangi kata.
+o	Pembacaan tersinkronisasi langsung dengan animasi teks ketikan (typewriter box) dan berhenti seketika saat tombol audio/bisu ditekan (window.speechSynthesis.cancel()).
+III. ARSITEKTUR STRUKTUR 4 HALAMAN WAJIB APLIKASI & NAVIGASI PROFESIONAL
+Game dibangun secara terpadu dalam satu aplikasi web responsif (Single-File Architecture: index.html) yang terbagi ke dalam 4 halaman navigasi utama:
+1. Halaman 1: Pembuka (Splash & Title Screen)
+•	Header Identitas Resmi: Berdampingan menampilkan Logo PGRI (kiri) dan Logo Pemkab Wonogiri (kanan) dengan tajuk formal Lomba Inovasi Game Edukasi PGRI Kabupaten Wonogiri 2026.
+•	Judul & Sub-judul Permainan: Tipografi tebal claymorphic timbul: PENJAGA BUMI NUSANTARA dengan sub-judul Merawat Alam Menjaga Masa Depan.
+•	Kredit Pengembang: Karya: Bachtiar Imani — PGRI Cabang Girimarto.
+•	Latar Belakang Sinematik: Kanvas 3D Three.js menampilkan pulau Nusantara berputar lembut (slow-orbiting diorama) dengan vegetasi blocky cerah.
+•	Navigasi Utama:
+o	Tombol [ 🚀 Mulai Petualangan ] (Tombol kapsul hijau zamrud berpendar dengan kompresi mikro saat disentuh).
+o	Tombol [ 📖 Panduan & Capaian Belajar ] (Membuka ringkasan kurikulum dan misi aksi).
+o	Tombol Pojok Atas: [ ⛶ Layar Penuh / Fullscreen ] (Mengaktifkan Fullscreen API agar permainan memenuhi layar monitor/ponsel tanpa bilah peramban).
+2. Halaman 2: Pengaturan, Edukasi, & Pilihan Mode
+•	Panel Capaian Pembelajaran (Fase C): Paparan ringkas Capaian Pembelajaran (CP) dan Tujuan Pembelajaran (TP) materi akhlak peduli lingkungan.
+•	Input Profil Pemain: Kolom masukan nama siswa (input text 2–15 karakter dengan validasi anti-kosong dan sanitasi simbol berbahaya).
+•	Konfigurasi Suara Narator Guru PAI & BP (Sistem Adaptif Gaya Aoede):
+o	Pilihan radio/toggle: [ 👩‍🏫 Bu Guru Rahma ] (SUARA PEREMPUAN — Ceria & Mengajak) / [ 👨‍🏫 Pak Guru Ilyas ] (SUARA LAKI-LAKI — Ceria & Mengajak) / [ 🔇 Mode Hening ].
+•	Pilihan Mode Permainan:
+o	Mode Solo (1 Pemain): Petualangan mandiri dengan bot/NPC warga otomatis.
+o	Mode Bersama / Split-Screen (2 Pemain): Kerja sama lokal dalam satu layar.
+o	Mode Kelas Multiplayer WebRTC P2P:
+	Tombol Guru: [ 🏫 Buat Room Kelas (Host) ] $\rightarrow$ Menghasilkan Room Code 4–6 digit (misal: BUMI-5A).
+	Kolom Murid: [ 👥 Gabung Room ] $\rightarrow$ Masukkan Room Code untuk sinkronisasi avatar kelas.
+•	Panduan Kontrol Interaktif: Panduan visual tombol navigasi untuk Laptop/Desktop (WASD, Spasi, [E]) dan HP/Tablet (Joystick, Tombol Lompat, Tombol Interaksi).
+•	Tombol Aksi: [ ⚔️ Masuk ke Arena Misi ] (Meluncurkan sinematik prolog).
+3. Halaman 3: Arena Permainan Utama (Interactive Gameplay Screen)
+Halaman arena aktif yang mewadahi transisi sinematik naratif serta penjelajahan 6 Level Taksonomi Bloom (C1–C6).
+•	Top Header HUD Terpadu (Selalu Aktif & Berlaku untuk Seluruh Sesi):
+o	Identitas Pemain: Avatar mini + Nama Siswa + Gelar ("Penjaga Bumi Cilik").
+o	Display Nyawa / Toleransi Batin: 3 Daun Monstera 3D berembun (3x 🍃). Mengayun dinamis; jika salah/gagal, daun bergetar, berubah cokelat kusam, dan gugur melayang diiringi efek suara disonan.
+o	Display Skor Kumulatif: Angka skor digital timbul emas berbasis matriks Bloom (0 hingga 100 Poin maksimal).
+o	Display Waktu / Countdown Timer: Bar waktu silinder kapsul dengan pewarnaan adaptif (Hijau $\rightarrow$ Kuning $\rightarrow$ Merah berkedip saat 10 detik terakhir).
+o	Tabung Dual-Gauge Bar: Kapsul silinder kaca transparan berisi cairan beriak dinamis:
+	Eco-Health Gauge (Hijau Zamrud): Menunjukkan persentase kesehatan ekosistem lingkungan (mulai dari 20% saat bumi rusak hingga 100% saat pulih total).
+	Amanah Gauge (Emas Berpendar): Menunjukkan integritas tanggung jawab moral dan etika pemain (mulai dari 50% hingga 100% penuh).
+o	Progress Bar 6 Level: Indikator bola tahapan heksagonal C1 sampai C6 yang terhubung garis cahaya.
+o	Bilah Navigasi Khusus Evaluasi Juri & Aksesibilitas Layar:
+	Tombol Fullscreen Profesional: [ ⛶ Layar Penuh ] (Beralih instan antara mode fullscreen peramban dan jendela biasa, menjaga rasio aspek 16:9 kanvas Three.js tetap tajam dan proporsional).
+	Tombol Log Out Sticky Pojok Kanan Atas: [ 🚪 Keluar / Ganti Pemain ] (Dialog konfirmasi ramah anak + pembersihan memori sesi total).
+	Tombol Cepat: [ 🗺️ Peta Misi (Uji Level) ] (Menu loncat bebas ke Level 1–6 tanpa syarat untuk pengujian juri).
+	Tombol Audio & Jeda: [ 🎙️ Bu Rahma / Pak Ilyas / Hening ], [ 🔊 Audio SFX ], dan [ ⏸️ Jeda ].
+•	Area Kanvas 3D Three.js: Ruang proyeksi visual bergaya Low-Poly Blocky Modular dengan sudut pandang kamera adaptif di setiap level.
+•	Banner Indikator Bloom: Pita informasi kognitif di sudut kanvas ("Level X: [Nama Level] — Tingkat Kognitif: CX [Kategori Bloom]").
+•	Mini Map Kontekstual: Radar pemantau posisi yang aktif proporsional sesuai kebutuhan level (Wajib aktif di Level 4, 5, dan 6).
+•	Kontrol Sentuh Layar (Khusus Mobile): Tampilan otomatis D-Pad/Joystick melayang di kiri bawah, tombol lompat [▲] di kanan bawah, dan tombol melayang [KETUK INTERAKSI].
+4. Halaman 4: Hasil Akhir & Piagam Ikrar Autentik (Result Screen)
+•	Kop Dokumen Resmi:
+o	Memuat Logo PGRI dan Logo Pemkab Wonogiri berdampingan di bagian atas.
+o	Tajuk resmi: Pemerintah Kabupaten Wonogiri — Persatuan Guru Republik Indonesia (PGRI) Cabang Girimarto.
+•	Papan Evaluasi Kinerja (Scorecard):
+o	Predikat Pencapaian Bintang (⭐⭐⭐ / ⭐⭐ / ⭐).
+o	Total Skor Akhir (Skala 0–100) dan Persentase Akhir Dual-Gauge Bar (Eco-Health & Amanah).
+o	Matriks Analisis Kognitif Taksonomi Bloom (Rincian perolehan nilai C1, C2, C3, C4, C5, C6).
+•	Instrumen Asesmen Autentik (Piagam Ikrar Aksi Nyata): Lembar komitmen fisik berbingkai ornamen sulur Nusantara dengan stempel segel lilin emas (wax seal stamp), memuat 6 butir janji aksi nyata pelestarian alam serta 3 kolom tanda tangan resmi (Siswa, Guru PAI & BP, Orang Tua/Wali).
+•	Mekanisme Cetak/Ekspor Tanpa Pustaka Eksternal:
+o	Tombol [ 🖨️ Unduh / Cetak Piagam (PDF) ] menggunakan fungsi native window.print() yang dipadukan aturan @media print CSS. Seluruh tombol antarmuka game disembunyikan otomatis, menghasilkan dokumen bersih proporsional ukuran A4.
+•	Tombol Navigasi Akhir:
+o	Tombol [ 🔄 Main Lagi / Remedial ].
+o	Tombol [ 🚪 Selesai & Keluar ].
+IV. PARAMETER TIMER LEVEL, PENALTI NYAWA, DUAL-GAUGE, & SESI REMEDIAL
+1.	Distribusi Batas Waktu & Penalti Nyawa (Semua Level Terpola Presisi):
+o	Level 1 (Detektif Sampah): Waktu respon bergelombang: Gelombang 1 (4,5 dtk/objek), Gelombang 2 (3,5 dtk/objek), Gelombang 3 (2,8 dtk/objek). Salah pilah sampah = kehilangan 1 daun toleransi.
+o	Level 2 (Rahasia 3R): Batas waktu total 120 detik untuk menyusun 5 kata anagram dan menghitung soal numerasi. Salah susun balok atau salah hitung = kehilangan 1 daun toleransi.
+o	Level 3 (Mesin Capit 3R): Waktu 20 detik per benda yang dicapit. Salah menjatuhkan benda ke kategori tong yang keliru = kehilangan 1 daun toleransi.
+o	Level 4 (Kota Lestari): Waktu penjelajahan 180 detik. Memilih bahan berbahaya/beracun = ditolak warga, bahan membal kembali ke rak, dan kehilangan 1 daun toleransi.
+o	Level 5 (Penjaga Ekosistem): Waktu 45 detik per zona krisis. Memilih solusi instan berisiko tinggi yang merusak alam = kehilangan 1 daun toleransi.
+o	Level 6 (Radar Nusantara): Batas waktu total 180 detik untuk merakit 5 pulau $\times$ 3 pilar masterplan. Salah menetapkan pilar = kehilangan 1 daun toleransi.
+2.	Formula Dinamis Dual-Gauge Bar (Eco-Health & Amanah):
+o	Kondisi Awal (Mulai Game): Eco-Health = 20% (alam terluka), Amanah = 50% (kesiapan awal niat baik siswa).
+o	Kenaikan Tiap Aksi Benar: Setiap keberhasilan aksi di Level 1–6 menyuntikkan $+13\%$ hingga $+15\%$ cairan bio-energi ke dalam kedua tabung secara berirama.
+o	Kondisi Kemenangan Akhir (Level 6 Selesai): Kedua tabung mencapai 100% penuh, berpendar terang, dan memicu gelombang aurora hijau zamrud pemulihan alam.
+3.	Mekanisme Penanganan Kegagalan / Sesi Remedial Ramah Anak:
+o	Jika 3 Daun Toleransi habis atau timer mencapai 0, sistem tidak menampilkan tulisan menakutkan seperti "Game Over" atau "Kamu Kalah".
+o	Layar beralih ke panel refleksi dengan nada empati dari Narator:
+"Jangan berkecil hati, [Nama Pemain]. Menjaga bumi memang membutuhkan ketekunan dan latihan. Tarik napas sejenak, ingat kembali pelajaran kita, dan mari coba sekali lagi bersama-sama!"
+o	Tombol [ 🔄 Coba Ulang Misi Ini ]: Mengembalikan 3 Daun Toleransi penuh dan mengulang hanya level yang bersangkutan tanpa menghapus pencapaian level yang telah lalu.
+V. ARSITEKTUR ENGINE 3D, MULTIPLAYER P2P, & KONTROL
+1. Rendering Engine & Estetika Visual 3D
+•	Pustaka Rendering: Three.js (dimuat via CDN resmi, bebas dependensi instalasi build eksternal).
+•	Gaya Visual: Low-Poly Blocky Modular berwarna cerah ramah anak (vibrant palette).
+•	Konstruksi Avatar Pemain:
+o	Dibangun secara prosedural dari komponen kubus/balok (THREE.BoxGeometry): 1 Kepala Kubus, 1 Badan Balok, 2 Lengan Balok, 2 Kaki Balok.
+o	Tekstur kostum bernuansa lokal: Seragam batik sekolah / pramuka / rompi hijau Penjaga Bumi.
+o	Pilihan hiasan kepala: Peci hitam untuk avatar laki-laki dan jilbab simpel blocky untuk avatar perempuan.
+o	Papan nama melayang (Floating Billboard Nameplate): Teks nama pemain, titel "Penjaga Bumi Cilik", dan ikon daun toleransi melayang di atas kepala selalu menghadap kamera.
+o	Siklus animasi prosedural: Idle (bernapas halus), Walk (ayunan lengan & tungkai berlawanan arah), dan Jump (tungkai menekuk dinamis).
+•	Dunia & Lingkungan:
+o	Gedung sekolah, jalanan kota Wonogiri, pepohonan rindang, dan kontur alam berundak dibentuk dari balok-balok low-poly modular yang bersih dan ringan.
+o	Spawn Point & Checkpoint Pad: Bantalan ubin bersinar hijau di tanah dengan efek partikel kilau dan lonceng notifikasi saat terinjak. Jika pemain terjatuh melampaui batas dunia (out-of-bounds), avatar otomatis respawn di titik checkpoint aktif.
+•	Sistem ProximityPrompt: Lingkaran interaksi mengambang di atas objek/NPC dalam radius 2–3 meter bertuliskan [E] (desktop) atau [KETUK] (ponsel) dengan animasi cincin melingkar (fill-up circular progress).
+2. Arsitektur Multiplayer WebRTC P2P (Bebas Biaya Server / Zero VPS)
+•	Protokol Inti: WebRTC DataChannel melalui pustaka PeerJS (peerjs via CDN publik).
+•	Model Jaringan: Host-Authoritative Peer-to-Peer:
+o	Guru (Host): Menekan tombol [ Buat Room Kelas ] $\rightarrow$ Sistem membuat kode unik 4–6 digit (misal: BUMI-5A). Browser Guru bertindak sebagai server berwenang untuk validasi status misi dan sinkronisasi dunia.
+o	Murid (Peers / 2–30 Pemain): Memasukkan kode room pada layar pengaturan: [ Gabung Room ]. Posisi avatar $\{x, y, z, \text{rotY}, \text{anim}\}$ dikirim langsung antar-peramban setiap 50 ms.
+•	Mekanisme Darurat Pengujian Juri (Fail-Safe Fallback):
+o	Jika game dijalankan secara mandiri (Mode Solo / tanpa koneksi WebRTC), game berjalan 100% normal tanpa eror. Dunia permainan dihidupkan oleh karakter bot dan NPC warga yang bergerak otomatis.
+3. Kontrol Aksesibilitas Responsif (Dual Input)
+•	Desktop / Laptop:
+o	Gerak: Tombol W-A-S-D atau Panah Arah.
+o	Lompat: Tombol Spasi.
+o	Interaksi Proximity: Tombol [E] atau Enter.
+o	Kamera: Gerakan mouse bebas (Orbit / Smooth Follow Camera).
+•	Ponsel / Tablet:
+o	Gerak: Floating Virtual Joystick responsif di sudut kiri bawah layar.
+o	Lompat: Tombol bulat [▲] di sudut kanan bawah layar.
+o	Interaksi Proximity: Tombol sentuh melayang [KETUK INTERAKSI].
+o	Kamera: Sapuan jari (touch swipe) pada area layar kosong.
+VI. PROTOKOL DEBUGGING, OPTIMIZATION, & KETAHANAN SISTEM (STANDAR JUKNIS)
+1.	Efisiensi Komputasi GPU & Three.js (Draw Call Optimization):
+o	Color Atlas Texture (Palet Warna Bersama): Satu lembar tekstur palet mini terpadu yang memuat spektrum warna dedaunan (hijau apel, zamrud, lumut, zaitun), batang kayu jati, abu-abu jalanan kota, hingga warna cerah gedung/bunga. Menghilangkan ratusan instruksi material setup ke GPU.
+o	InstancedMesh Rendering: Penerapan THREE.InstancedMesh untuk menduplikasi aset massal (seperti 40 pohon di Level 4 atau vegetasi lereng di Level 5) dengan skala, rotasi, dan variasi warna yang beragam dalam satu panggilan gambar (single draw call). Menjamin Draw Calls konsisten di bawah 30 per frame.
+2.	Pencegahan Eror & Pemulihan WebGL (Zero-Crash Reliability):
+o	WebGL Context Lost Recovery: Integrasi event listener webglcontextlost dan webglcontextrestored untuk memulihkan sesi render tanpa merusak halaman jika terjadi lonjakan beban GPU pada komputer juri/sekolah.
+o	Anti-Spam / Click Debounce System: Penguncian tombol aksi selama 300 ms setelah penekanan pertama guna mencegah race condition, penambahan skor ganda, atau penumpukan animasi secara tidak sengaja.
+o	Sanitasi Input: Validasi ketat nama pemain (panjang 2–15 karakter, pencegahan spasi kosong, dan penyaringan karakter berbahaya).
+3.	State Teardown Engine (Pembersihan Memori Total):
+o	Fungsi khusus cleanupCurrentLevel() yang otomatis mencabut seluruh eventListener, menghentikan siklus requestAnimationFrame aktif, serta memutuskan node Web Audio API dan menghentikan speechSynthesis saat tombol Peta Misi atau Log Out ditekan. Menjamin tidak ada kebocoran memori (memory leak).
+4.	Optimasi Daya & Penghematan Baterai:
+o	Deteksi visibilitas halaman (document.hidden): Siklus render dan timer otomatis dihentikan sementara (auto-pause) saat tab peramban diminimalkan.
+o	Pembatasan laju paket WebRTC (Packet Throttling) maksimal 20 paket per detik hanya saat karakter bergerak aktif.
+VII. UI/UX ASSET GENERATION & SISTEM AUDIO PROSEDURAL
+Seluruh aset antarmuka visual dibangkitkan murni berbasis kode (vektor SVG, CSS 3D Glassmorphism, dan Canvas Three.js), dan efek suara disintesis matematis menggunakan Web Audio API tanpa berkas audio eksternal.
+Komponen / Aksi	Wujud Visual UI/UX Prosedural	Respon Animasi & Fisika Mikro	Rekayasa Suara (Web Audio API Synthesizer)
+Langkah Kaki (Rumput/Tanah - L1 & L5)	Avatar balok mengayunkan tungkai secara teratur.	Jejak partikel debu tanah halus di tumit.	Band-pass filtered noise (400–800 Hz, -18 dB, 0,04 dtk). Bergantian kiri-kanan tiap 350 ms.
+Langkah Kaki (Trotoar/Aspal - L4 & Lobby)	Sepatu balok menjejak bidang jalan modular.	Efek kompresi pegas mikro pada kaki balok.	Sentakan triangle/sine rendah (160 Hz $\rightarrow$ 80 Hz, 0,04 dtk).
+Lompat & Mendarat (Jump & Land)	Avatar melompat ke atas, tungkai menekuk.	Badan menegang lalu membal (squash-stretch).	Lompat: Sine sweep meluncur naik (180 Hz $\rightarrow$ 420 Hz, 0,15 dtk).
+
+
+Mendarat: Hentakan low-sine (90 Hz, decay 0,08 dtk).
+Header: Daun Toleransi (3 Nyawa)	SVG Daun Monstera 3D zamrud mengkilap dengan butiran embun timbul.	Mengayun lembut (idle breathe). Jika salah: bergetar, berubah cokelat kusam, gugur melayang.	Gugur: Nada disonan meluncur turun (descending triangle wave, 440 Hz $\rightarrow$ 180 Hz, 0,3 dtk) + desau angin sedih.
+Header: Tabung Dual-Gauge	Kapsul silinder kaca transparan tebal dengan pantulan lengkung putih dan gelembung.	Gelombang fluida hijau (Eco-Health) dan emas (Amanah) beriak dinamis; retakan mikro saat krisis.	Nilai Naik: Arpeggio lonceng cerah (bright sine blip chime, C5-E5-G5, 0,2 dtk).
+Navigasi: Tombol Keluar & Peta Misi	Tombol kapsul claymorphic timbul dengan bayangan tebal; ikon [🚪] dan [🗺️].	Hover/Touch: Kompresi tombol (scale 0.95). Membuka modal dengan backdrop blur.	Klik: Ketukan pop kayu taktil (gentle wooden pop click, 600 Hz, 0,05 dtk).
+Tombol Fullscreen Profesional	Tombol kapsul timbul dengan ikon transisi [ ⛶ ] / [ 🗗 ].	Menyesuaikan kanvas ke resolusi layar maksimal (zero letterbox glitch).	Klik: Sentakan klik futuristik (dual sine chime, 700 Hz & 950 Hz, 0,04 dtk).
+Narasi & Sinematik Prolog	Kotak teks kertas daur ulang hangat dengan garis jahitan tepi (stitched parchment).	Teks mengetik huruf per huruf (typewriter), kursor berkedip, tombol [Lewati] di pojok.	Tuts Mesin Tik: Desis gesekan tuts mikro teracak (white noise tap with high-pass filter, 0,02 dtk per huruf).
+Sampah Masuk Tong (Organik/Anorganik)	Tong silinder 3D membuka tutup 15° saat didekati benda.	Badan tong membal ke bawah (squash 5%), tutup berayun pegas; sampah menyusut ke dalam tong.	Jatuh Masuk: Sentakan berongga (soft hollow thud, sine 180 Hz, decay 0,1 dtk).
+Benda Logam/Keras/B3 Masuk Tong	Bibir tong memancarkan pendaran cahaya merah tipis.	Benda jatuh dengan dua kali pentalan inersia mikro sebelum diam di dasar tong.	Benturan Logam: Denting benturan ganda pejal (metallic clink-clank, square wave 780 Hz & 1240 Hz, 0,15 dtk).
+Balok Huruf Terpasang (Level 2)	Ubin balok kayu 3D tebal bertekstur serat (tactile wooden tiles).	Balok terangkat saat digeser, menempel otomatis dengan efek tarikan magnet (magnetic snap).	Pasang Balok: Benturan balok kayu pejal ganda (woodblock hit, 450–540 Hz, 0,06 dtk).
+Operasi Mesin Capit 3R (Level 3)	Cakar capit 3 cabang baja kromium, baut timbul, dan rel katrol atas.	Cakar mengatup kuat menekan benda, rantai baja menegang lurus, inersia ayunan samping.	Motor Rel: Dengung motor listrik halus (90 Hz).
+
+
+Cakar Jepit: Denting logam mengunci (metallic clack, 1200 Hz).
+Aksi Benar / Jawaban Tepat	Partikel kilau bintang emas memancar dari objek yang diselesaikan.	Karakter atau warga melompat gembira (cheer jump), balon dialog emoji tersenyum.	Akord Sukses: Akord mayor Do-Mi-Sol cerah (sine wave, C5-E5-G5: 523-659-784 Hz, 0,3 dtk).
+Aksi Salah / Penolakan Bahan	Tepi layar menyala kilatan merah transparan tipis sesaat.	Objek terpental balik, tutup tong membanting menutup, badan tong bergetar menyamping 2 ketukan.	Disonansi Peringatan: Dengung tumpul pembetulan santun (sawtooth low buzz, 130–138 Hz, 0,2 dtk) + camera shake.
+Bencana & Krisis (Intro L5)	Visual tanah lereng bukit retak dan air sungai berbusa keruh.	Layar bergetar gemuruh bumi (earth tremor, 0,3 dtk).	Gemuruh Bumi: Deru frekuensi rendah (rumble low-pass noise, 60 Hz).
+Pemulihan Alam (Level 5 & 6)	Aliran sungai berubah biru jernih, pohon tumbuh seketika di tebing, kabut polusi terdorong.	Gelombang cincin aurora hijau zamrud (healing shockwave) memancar melingkar dari tengah layar.	Alam Pulih: Kicau burung sintetis lembut (filtered chirp) dan denting gong kemenangan beresonansi panjang.
+Piagam Ikrar Autentik (Halaman 4)	Bingkai sulur ornamen Nusantara klasik dan lencana segel lilin emas (wax seal).	Kotak ikrar mencentang dengan animasi coretan tinta emas basah; tombol cetak berpendar.	Centang: Goresan tinta basah (short sweeping noise swish).
+
+
+Lencana Emas: Riak piala kristal (crystal glass chime, 1800 Hz).
+VIII. PEMETAAN DUNIA 3D BLOCKY & SUDUT PANDANG KAMERA ANTAR-LEVEL
+Level & Domain	Penerapan Gaya 3D Blocky	Sudut Pandang Kamera & Interaksi	Mini Map
+Lobby & Hub Utama	3D Blocky Eksplorasi Penuh	Third-Person Orbit View (Bebas bergerak, melompat, melihat pemain lain, menyapa NPC pemandu).	Aktif (Denah Hub)
+Level 1: Detektif Sampah (C1)	3D Blocky Terfokus (Minigame Arena)	First-Person Hands View (Fokus menyortir 15 objek sampah jatuh ke 3 tong silinder blocky).	Tidak Aktif
+Level 2: Rahasia 3R (C2)	3D Blocky Interior (Ruang Baca)	Workbench View (Interaksi meja baca kayu, balok huruf 3D tactile, dan jurnal AKM).	Tidak Aktif
+Level 3: Mesin Capit 3R (C3)	3D Blocky Arkade (Gudang Sekolah)	Arcade Front View with Depth (Mengendalikan rel capit baja kromium menjepit barang ke 3 tong).	Tidak Aktif
+Level 4: Kota Lestari (C4)	3D Blocky Eksplorasi (Jalanan Kota)	Top-Down Isometric 2.5D (Menjelajah trotoar kota, mendekati 5 NPC warga via ProximityPrompt [E], merakit karya).	Wajib Aktif (Radar Kota 🟡🔵🟢🔴)
+Level 5: Penjaga Ekosistem (C5)	3D Blocky Diorama (Pos Jagawana)	Diorama Side-Perspective (Diorama maket bertingkat: Hulu Bukit, DAS Sungai, dan Sawah).	Wajib Aktif (Peta Topografi 3 Zona)
+Level 6: Radar Nusantara (C6)	3D Blocky Command Center (Satelit)	Satellite Orbital View (Ruang komando satelit ber-HUD futuristik, proyeksi relief kepulauan Indonesia).	Wajib Aktif (Radar Sonar Satelit)
+IX. PENGATURAN KAMERA SINEMATIK, SMOOTHING, & CAMERA SHAKE
+1.	Camera Smoothing (LERP):
+o	Formula gerak halus: $\text{Posisi} = \text{Posisi} + (\text{Target} - \text{Posisi}) \times 0.08$.
+o	Menjamin gerak kamera mengikuti avatar di kota (L4) dan transisi zoom antar-level berjalan anggun tanpa patahan visual.
+2.	Camera Shake Dinamis & Mikro (0,15 – 0,30 Detik, Amplitudo 3–6 px):
+o	Level 1: Guncangan tajam mendadak (0,2 dtk) saat salah pilah B3 / daun gugur + kilatan merah tepi layar.
+o	Level 3: Entakan mikro saat capit mencengkeram beban berat dan sentakan vertikal saat benda mendarat di dasar tong (thud).
+o	Level 4: Getaran peringatan horizontal 2 ketukan saat murid memilih bahan berbahaya/beracun.
+o	Level 5: Gemuruh bumi pelan (0,3 dtk) saat visual tanah lereng retak mengawali intro zona krisis.
+o	Level 6: Gelombang kepuasan berirama (triumphant camera pulse) saat masterplan 3 pilar tuntas 100%.
+X. ALUR SINEMATIK LENGKAP & NASKAH TRANSMISI JURNAL
+1. Sinematik Prolog: "Bumi yang Terluka"
+(Durasi 6–8 detik, dilengkapi tombol [Lewati / Skip])
+•	Babak 1 (Kamera Melayang di Atas Panorama Nusantara):
+"Subhanallah... Pandanglah bumi Nusantara yang terbentang indah. Gunung-gunung hijau menjulang, sungai-sungai mengalir jernih, dan lautan biru memeluk ribuan pulau dengan penuh berkah. Segala ciptaan Tuhan ini dianugerahkan dalam keseimbangan yang sempurna."
+•	Babak 2 (Kamera Menukik Tajam, Tanah Retak, Warna Kelabu, Gemuruh Bumi):
+"Namun, lihatlah apa yang terjadi... Tangan-tangan manusia yang serakah dan lalai mulai mendatangkan kerusakan alam. Sampah plastik menumpuk, pohon-pohon ditebang sembarangan, dan sumber air tercemar. Bumi merintih menahan beban pemborosan ini..."
+•	Babak 3 (Kamera Mengorbit ke Karakter Murid, Tunas Hijau Bercahaya Turun):
+"Ingatlah anak saleh, kita dihadirkan di bumi bukan untuk merusak, melainkan memikul amanah mulia sebagai Penjaga Bumi. Wahai [Nama Pemain], bumi memanggil kepedulianmu! Mulailah dari langkah paling kecil di sekolahmu. Jadilah Penjaga Bumi Nusantara!"
+2. Naskah Transisi Teks Ketikan Antar-Level (Typewriter Box)
+•	Transisi Menuju Level 2 (Dari L1 ke L2):
+[TRANSMISI JURNAL PENJAGA BUMI - CATATAN 01]
+"Langkah awalmu luar biasa, [Nama Pemain]! Sampah di sekitarmu kini telah terpilah dengan rapi. Namun ingatlah, memilah saja belum cukup jika kita terus menimbun barang baru setiap hari. Masuklah ke ruang baca sekolah, temukan 'Rahasia 3R' untuk mencegah kebiasaan hidup boros!"
+•	Transisi Menuju Level 3 (Dari L2 ke L3):
+[TRANSMISI JURNAL PENJAGA BUMI - CATATAN 02]
+"Satu per satu rahasia berhasil kamu pecahkan. Pemahaman penting kini ada di pikiranmu. Namun ilmu akan sia-sia jika tidak dipraktikkan. Pintu gudang logistik telah dibuka. Kendalikan Mesin Capit Pengolah Sampah, buktikan aksimu dengan tepat!"
+•	Transisi Menuju Level 4 (Dari L3 ke L4):
+[TRANSMISI JURNAL PENJAGA BUMI - CATATAN 03]
+"Barang-barang di sekolah telah terselamatkan dari pemborosan. Tapi dengarlah... di luar pagar sekolah, warga kota sedang bingung mengolah barang bekas. Mari melangkah ke jalanan kota! Waktunya bergotong royong dan merakit karya bermanfaat untuk sesama."
+•	Transisi Menuju Level 5 (Dari L4 ke L5):
+[TRANSMISI JURNAL PENJAGA BUMI - CATATAN 04]
+"Karyamu telah membuat warga kota tersenyum lega. Namun di kejauhan, sirine bahaya berbunyi dari lereng bukit dan aliran sungai. Alam sedang menghadapi krisis berat. Bersiaplah menuju pos penjaga alam, jadilah penentu kebijakan yang bijak dalam memilih solusi paling minim dampaknya!"
+•	Transisi Menuju Level 6 (Dari L5 ke L6):
+[TRANSMISI JURNAL PENJAGA BUMI - CATATAN 05]
+"Keputusan bijakmu berhasil menenangkan ancaman bencana alam setempat. Namun pandanglah cakrawala yang lebih luas! Satelit pemantau menangkap lima sinyal darurat di berbagai penjuru Nusantara. Masuklah ke ruang pusat komando, aktifkan Radar Nusantara, dan rancang strategi hebat untuk memulihkan negeri!"
+•	Layar Kemenangan (Victory Epilog Screen):
+[TRANSMISI JURNAL PENJAGA BUMI - CATATAN AKHIR]
+"Alhamdulillah! Lima titik radar kini bersinar hijau terang benderang. Langit kembali bersih, perairan kembali jernih, dan rimba bernapas lega. Seluruh pulau Nusantara tersambung dalam keharmonisan alam. Kamu telah membuktikan hakikat sejati seorang Penjaga Bumi Cilik: beriman, peduli, cerdas, dan merawat bumi demi masa depan yang lestari!"
+XI. PEDOMAN KEBAHASAAN & RAMAH ANAK SD FASE C
+1.	Institusi: 100% menggunakan istilah "Sekolah" (menghilangkan kata madrasah).
+2.	Bahasa Indonesia Umum & Komunikatif:
+o	Mubazir / Tabdzir $\rightarrow$ "Pemborosan / Kebiasaan Boros".
+o	Fasad fil Ardh $\rightarrow$ "Kerusakan Alam".
+o	Ta'awun $\rightarrow$ "Gotong Royong / Tolong-Menolong".
+o	Dar'ul Mafasid $\rightarrow$ "Memilih Solusi Paling Minim Dampak Buruknya".
+o	Khalifah fil Ardh $\rightarrow$ Disederhanakan menjadi "Penjaga Bumi Cilik".
+3.	Penyederhanaan Diksi Ilmiah Berat:
+o	Unsur hara $\rightarrow$ Penyubur tanah alami.
+o	Polimer sintetis $\rightarrow$ Plastik buatan pabrik.
+o	Residu hidrokarbon $\rightarrow$ Sisa minyak dan bau bensin beracun.
+o	Tanaman refugia $\rightarrow$ Tanaman bunga penangkal hama.
+o	Biorock $\rightarrow$ Kerangka besi terumbu karang.
+o	Rhizophora $\rightarrow$ Bibit pohon bakau.
+XII. PEDOMAN BAKU ASESMEN ANTI-POLA, AKM, & SKOR
+1.	Anti-Pola Kunci Jawaban (No Pattern Bias): Kunci jawaban diacak secara alami, mematahkan pola tebakan berulang (A-B-C-A-B-C), serta memuat kunci ganda berturut-turut pada posisi tertentu.
+2.	Homogenitas Panjang Pilihan (No Length Bias): Kalimat pilihan benar dan pengecoh dibuat setara panjangnya (toleransi 1–3 kata). Pilihan benar dilarang paling mencolok.
+3.	Penguatan Literasi & Numerasi Terpadu: Membaca simbol kode 3R, dialog keluhan warga, telaah keselamatan bahan, teks berita daring aktual, serta hitungan kontekstual rasio/perkalian/pengurangan ramah anak SD.
+4.	Pembobotan Skor (Total 100 Poin) & Predikat:
+o	Level 1 (C1): Maksimal 15 Poin (1 poin per sampah benar).
+o	Level 2 (C2): Maksimal 15 Poin (3 poin per kata anagram & numerasi).
+o	Level 3 (C3): Maksimal 15 Poin (2,5 poin per aksi mesin capit tepat).
+o	Level 4 (C4): Maksimal 20 Poin (4 poin per karya rakit warga tuntas).
+o	Level 5 (C5): Maksimal 15 Poin (5 poin per pilihan solusi zona terbaik).
+o	Level 6 (C6): Maksimal 20 Poin (4 poin per pilar titik pulau).
+o	⭐⭐⭐ Penjaga Bumi Teladan Nusantara (Skor 90 – 100)
+o	⭐⭐ Penjaga Alam Bijaksana (Skor 75 – 89)
+o	⭐ Sahabat Lingkungan Cilik (Skor 60 – 74)
+o	Skor < 60: Sesi remedial ramah anak.
+XIII. RINCIAN FINAL 6 LEVEL PERMAINAN (C1–C6)
+LEVEL 1: DETEKTIF SAMPAH (C1 - Mengenali / Mengingat)
+•	Domain: Halaman Sekolah | Kamera: First-Person Hands View | Mini Map: Tidak Aktif.
+•	Dialog Pembuka (Pak Guru Ilyas):
+"Assalamu’alaikum, [Nama Pemain]! Menjaga kebersihan adalah bukti nyata iman dan rasa syukur kita. Lihatlah halaman sekolah kita, aneka sampah tercecer bercampur baur. Jika dibiarkan, ini bisa memicu kerusakan alam. Pilah dan geser sampah ke tempat yang benar secepat mungkin!"
+•	Peta Kunci Acak Murni (15 Objek):
+Kanan ➔ Kanan ➔ Kiri ➔ Atas ➔ Kiri ➔ Kiri ➔ Kanan ➔ Atas ➔ Atas ➔ Kiri ➔ Kanan ➔ Atas ➔ Kiri ➔ Kanan ➔ Atas
+1.	Botol Plastik Air Mineral ➔ KANAN (Anorganik)
+2.	Kantong Kresek Plastik ➔ KANAN (Anorganik)
+3.	Kulit Pisang Sisa Makanan ➔ KIRI (Organik)
+4.	Baterai Jam Dinding Bekas ➔ ATAS (B3)
+5.	Ranting Pohon Patah ➔ KIRI (Organik)
+6.	Daun Kering Berserakan ➔ KIRI (Organik)
+7.	Kaleng Minuman Soda ➔ KANAN (Anorganik)
+8.	Botol Semprot Obat Nyamuk ➔ ATAS (B3)
+9.	Lampu Bohlam Rusak ➔ ATAS (B3)
+10.	Sisa Sayuran Kantin ➔ KIRI (Organik)
+11.	Pecahan Botol Kaca ➔ KANAN (Anorganik)
+12.	Botol Bekas Pemutih Baju ➔ ATAS (B3)
+13.	Bonggol Jagung Rebus ➔ KIRI (Organik)
+14.	Sedotan Plastik Bekas ➔ KANAN (Anorganik)
+15.	Termometer Air Raksa Retak ➔ ATAS (B3)
+•	Refleksi Diri: "Apakah selama ini aku sudah membuang sampah pada tempat yang benar, ataukah aku masih membiarkan lingkungan sekolahku kotor?"
+•	Rencana Aksi: Memungut sampah plastik di sekolah, menyiapkan 2 tempat sampah di kamar, dan memilah sisa sayur/buah untuk kompos.
+LEVEL 2: RAHASIA 3R (C2 - Memahami)
+•	Domain: Ruang Baca Sekolah | Kamera: Workbench View | Mini Map: Tidak Aktif.
+•	Dialog Pembuka (Kak Shofi - Duta Lingkungan Sekolah):
+"Hebat sekali, halaman sekolah kita mulai bersih berkat ketelitianmu! Namun, [Nama Pemain], tumpukan sampah akan terus bertambah jika kita tidak tahu cara mengendalikannya. Para ahli telah merumuskan prinsip penting untuk mencegah pemborosan. Pecahkan teka-teki kata ini, pahami artinya, dan hitung dampak kebaikannya!"
+•	Peta Kunci Anti-Hafalan: KOMPOS ➔ REDUCE ➔ AMANAH ➔ RECYCLE ➔ REUSE
+1.	KOMPOS (P-M-O-K-O-S): Pupuk alami dari pembusukan sisa daun dan bahan organik yang menyuburkan tanah sekolah. (Numerasi: $3\text{ kg} \times 4\text{ bulan} = 12\text{ kg}$).
+2.	REDUCE (E-D-C-U-R-E): Tindakan membatasi pemakaian barang sekali pakai demi mencegah timbulan sampah baru dan menjauhi boros. (Numerasi: $2 \times 7 = 14\text{ sedotan}$).
+3.	AMANAH (A-H-M-A-N-A): Tanggung jawab moral yang diemban manusia sebagai pemelihara bumi untuk menjaga kelestarian alam dan lingkungan. (Numerasi: $\frac{9}{10} \times 100\% = 90\%$).
+4.	RECYCLE (C-E-C-L-R-Y-E): Tindakan mengolah limbah padat anorganik melalui proses daur ulang industri agar menjadi bahan baku bermanfaat. (Numerasi: $8\text{ kg} \times \text{Rp}2.000 = \text{Rp}16.000$).
+5.	REUSE (S-U-E-E-R): Tindakan memanfaatkan kembali wadah atau kemasan yang masih kokoh untuk keperluan lain tanpa meleburnya di pabrik. (Numerasi: $12 - (4+5) = 3\text{ toples}$).
+•	Refleksi Diri: "Berapa banyak barang sekali pakai yang kubuang setiap hari? Mengapa kita tidak boleh membiasakan hidup boros? Apakah gaya hidupku sudah cukup hemat?"
+•	Rencana Aksi: Membawa tumbler sendiri, menolak kantong plastik saat belanjaan bisa dipegang, dan memakai kertas bekas untuk coretan belajar.
+LEVEL 3: OPERASI MESIN CAPIT 3R (C3 - Menerapkan)
+•	Domain: Gudang Logistik Sekolah | Kamera: Arcade Front View with Depth | Mini Map: Tidak Aktif.
+•	Dialog Pembuka (Pak Joko - Petugas Sarana):
+"Halo, [Nama Pemain]! Terima kasih sudah mampir ke gudang sekolah. Di rak sebelah kanan ini, banyak sekali barang yang baru dikumpulkan. Jika dibiarkan menumpuk, tentu terjadi pemborosan besar. Gunakan rel mesin capit ini: jepit barangnya, geser hati-hati, lalu jatuhkan tepat ke tong REDUCE, REUSE, atau RECYCLE!"
+•	Peta Kunci Acak Bebas Pola: REUSE ➔ REDUCE ➔ REDUCE ➔ RECYCLE ➔ REUSE ➔ RECYCLE
+1.	Ban Mobil Bekas Layak Pakai ➔ REUSE (Numerasi: $12 \div 3 = 4\text{ set kursi}$).
+2.	Kantong Belanja Kain (Tote Bag) ➔ REDUCE (Numerasi: $4 \times 4 = 16\text{ plastik dicegah}$).
+3.	Botol Minum Isi Ulang (Tumbler) ➔ REDUCE (Numerasi: $2 \times 20 = 40\text{ botol plastik}$).
+4.	Kaleng Minuman Penyok ➔ RECYCLE (Numerasi: Hemat 95% = hanya butuh 5% energi).
+5.	Botol Kaca Bekas Sirup (Bersih) ➔ REUSE (Numerasi: $5 \times \text{Rp}15.000 = \text{Rp}75.000\text{ hemat}$).
+6.	Kardus & Kertas Pembungkus Rusak ➔ RECYCLE (Numerasi: $150 \div 50 = 3\text{ pohon selamat}$).
+•	Refleksi Diri: "Memilah barang butuh ketelitian dan kesabaran seperti mengendalikan mesin capit. Sudahkah aku bersungguh-sungguh menjaga sarana dan fasilitas umum di sekolahku?"
+•	Rencana Aksi: Menutup rapat keran air wudu yang menetes, mematikan kipas/lampu kelas kosong, dan membuat pot hias dari kaleng/botol bekas.
+LEVEL 4: KREASI KARYA KOTA LESTARI (C4 - Menganalisis)
+•	Domain: Kawasan Pemukiman & Fasilitas Publik Kota | Kamera: Isometric 2.5D | Mini Map: Wajib Aktif.
+•	Dialog Pembuka (Bu Lurah Sekar):
+"Selamat datang di lingkungan kami, [Nama Pemain]! Warga kota menghadapi masalah tumpukan barang bekas. Namun, niat baik saja tidak cukup. Sebagai Penjaga Bumi yang cerdas, dengarkan keluhan warga dengan cermat, seleksi bahan yang aman, dan tolak keras bahan bekas yang beracun atau berbahaya. Mari bergotong royong!"
+•	Peta Slot Bahan Berbahaya (Ditolak): Slot 3 ➔ Slot 1 ➔ Slot 3 ➔ Slot 2 ➔ Slot 4
+1.	Pak RT Harjo (Kursi Taman Daur Ulang): Tolak Kaleng bekas racun rumput kimia (Slot 3). (Numerasi: 10 ban & 6 papan = maksimal 5 kursi).
+2.	Bu Nisa Guru TK (Tempat Pensil Meja Cantik): Tolak Potongan pelat seng berkarat tajam (Slot 1). (Numerasi: $72 \div 18 = 4\text{ tempat pensil}$).
+3.	Mas Bagas Petugas Kurir (Rak Sepatu Bersekat): Tolak Pecahan cermin kaca lemari rias retak (Slot 3). (Numerasi: Rasio 18 sekat butuh 9 kardus tebal).
+4.	Mbah Tejo Petani Kota (Pot Gantung Hidroponik): Tolak Jeriken bekas bensin minyak tanah (Slot 2). (Numerasi: $8 \times 3 = 24\text{ bibit sayur sawi}$).
+5.	Dek Maya Pelajar SD (Tote Bag Jeans Kuat): Tolak Kawat jemuran berkarat tanpa pelindung (Slot 4). (Numerasi: $4\text{ kg} - (1+2)\text{ kg} = 1\text{ kg sisa aman}$).
+•	Refleksi Diri: "Membantu sesama bisa dimulai dari hal sederhana di sekitar kita. Barang bekas ternyata bisa menjadi perabot bermanfaat jika diolah dengan cermat. Apakah tindakanku sudah membawa kebaikan dan rasa aman bagi orang lain?"
+•	Rencana Aksi: Mengajak teman membuat prakarya dari kardus, mengganti kresek belanja ibu dengan tas kain, dan menyumbangkan pakaian layak pakai.
+LEVEL 5: PENJAGA EKOSISTEM (C5 - Mengevaluasi)
+•	Domain: Hutan Hulu, DAS Sungai, Lahan Pertanian | Kamera: Diorama Side-Perspective | Mini Map: Wajib Aktif.
+•	Modal Awal: 100 Koin Kas Konservasi & 100 Poin Energi Relawan.
+•	Dialog Pembuka (Pak Darmo - Jagawana Senior):
+"Selamat datang di pos penjagaan alam, [Nama Pemain]! Masalah lingkungan di bentang alam bebas jauh lebih rumit. Di sini kamu memegang amanah sebagai penentu kebijakan. Kas dana dan tenaga relawan kita terbatas. Jangan tergiur cara instan yang tampak murah tapi merusak alam. Pilih alternatif yang paling minim risiko kerusakannya!"
+•	Peta Kunci Solusi Terbaik: Zona 1 (Slot B) ➔ Zona 2 (Slot C) ➔ Zona 3 (Slot A) (Pola: B - C - A)
+1.	Hulu Hutan Lindung (Erosi Lereng): Opsi B $\rightarrow$ Menanam pohon beringin dan rumput vetiver penahan erosi tanah di seluruh lereng. (30 Koin, 30 Energi). (Numerasi: Sisa koin $100 - 30 = 70$).
+2.	Daerah Aliran Sungai/DAS (Pencemaran Limbah): Opsi C $\rightarrow$ Memasang jaring apung penahan sampah serta membangun instalasi pengolahan limbah cair komunal. (25 Koin, 25 Energi). (Numerasi: Saldo akhir $70 - 25 + 5 = 50\text{ koin}$).
+3.	Lahan Pertanian Tepi Hutan (Hama Tikus): Opsi A $\rightarrow$ Membangun sarang pagupon burung hantu alami serta menanam tanaman bunga penangkal hama. (20 Koin, 20 Energi). (Numerasi: $4\text{ pasang} \times 8\text{ tikus} \times 7\text{ hari} = 224\text{ tikus dimangsa alami}$).
+•	Refleksi Diri: "Menjadi pemimpin pelestari alam berarti berani mengambil keputusan yang bijak. Tidak semua hal instan itu baik untuk lingkungan. Sanggupkah aku memilih jalan yang membutuhkan ketekunan asalkan alam tetap lestari dan minim risiko kerusakan?"
+•	Rencana Aksi: Merawat tanaman di pekarangan rumah setiap sore, tidak membuang minyak jelantah ke parit, dan menegur santun teman yang merusak tanaman.
+LEVEL 6: RADAR NUSANTARA (C6 - Mencipta)
+•	Domain: Pusat Kendali Satelit Nusantara | Kamera: Satellite Orbital View | Mini Map: Wajib Aktif.
+•	Dialog Pembuka (Ibu Melati - Kepala Satelit):
+"Selamat datang di ruang komando utama, [Nama Pemain]! Layar satelit kita mendeteksi 5 titik darurat di kepulauan Nusantara. Masalah besar ini tidak bisa diselesaikan dengan satu cara saja. Kamu harus membaca fakta beritanya, lalu merakit masterplan yang memadukan Aturan Pemerintah, Perbaikan Fisik, dan Edukasi Warga. Satukan pulau-pulau ini dalam kelestarian!"
+•	Peta Slot Kunci 3 Pilar:
+o	Jawa: 1 - 2 - 3 | Sumatra: 2 - 3 - 1 | Kalimantan: 3 - 1 - 2 | Bali/NT: 1 - 3 - 2 | Papua: 2 - 2 - 3
+•	5 Titik Radar Faktual & Tautan Berita Asli:
+1.	Jawa (Waduk Gajah Mungkur Wonogiri & Bengawan Solo):
+Tautan Berita: Solopos.com: Usia Pakai WGM Wonogiri Tinggal 6 Tahun
+(Numerasi: $150\text{ ha} \times 40\text{ ton} = 6.000\text{ ton sedimentasi dicegah/tahun}$).
+2.	Sumatra (Lahan Gambut Riau & Jambi):
+Tautan Berita: Mongabay Indonesia: Gambut Riau Menipis & Restorasi
+(Numerasi: $25\text{ sekat kanal} \times 8\text{ ha} = 200\text{ ha gambut basah}$).
+3.	Kalimantan (Rimba Tropis Borneo & Koridor Orangutan):
+Tautan Berita: Betahita.id: Fragmentasi Habitat Rusak Satwa
+(Numerasi Ramah Anak: 1 koridor lindungi 15 orangutan $\rightarrow$ $4 \times 15 = 60\text{ orangutan terlindungi}$).
+4.	Bali & Nusa Tenggara (Pesisir & Terumbu Karang):
+Tautan Berita: National Geographic Indonesia: Lautan Plastik & Karang
+(Numerasi: $15\text{ rak kerangka besi} \times 40\text{ bibit} = 600\text{ karang baru}$).
+5.	Papua (Hutan Bakau Teluk Pesisir):
+Tautan Berita: ANTARA News: Pelestarian Hutan Bakau Papua
+(Numerasi: $20\text{ ha} \times 10\text{ ton} = 200\text{ ton karbon diserap/tahun}$).
+•	Refleksi Diri: "Aku adalah bagian utuh dari Nusantara. Masalah lingkungan di berbagai pulau Indonesia adalah panggilan bagi kepedulianku. Kebaikan apa yang ingin kuberikan bagi masa depan negeriku?"
+•	Rencana Aksi: Membuat poster peduli alam untuk mading sekolah, menulis janji pribadi di buku catatan, dan aktif kerja bakti di lingkungan rumah.
+XIV. FORMAT INSTRUMEN ASESMEN AUTENTIK: PIAGAM IKRAR AKSI
+========================================================================================
+                          PEMERINTAH KABUPATEN WONOGIRI
+                   PERSATUAN GURU REPUBLIK INDONESIA (PGRI)
+                           CABANG PGRI GIRIMARTO
+----------------------------------------------------------------------------------------
+                 PIAGAM IKRAR AKSI NYATA PENJAGA BUMI CILIK
+               Game Edukasi PAI & BP: "Penjaga Bumi Nusantara"
+========================================================================================
+
+Diberikan kepada:
+Nama Siswa    : [ ............................................................ ]
+Kelas / Fase  : Kelas V / VI (Fase C)
+Sekolah       : [ ............................................................ ]
+Predikat Game : [ ⭐⭐⭐ PENJAGA BUMI TELADAN NUSANTARA ] (Skor: ...... / 100)
+
+Telah menyelesaikan seluruh misi pemulihan lingkungan dari Level 1 sampai Level 6 dan
+berikrar sungguh-sungguh untuk menjalankan 6 Rencana Aksi Nyata Pelestarian Alam:
+
+ [ ✓ ] 1. Memungut sampah plastik di lingkungan sekolah dan memilahnya pada tempat yang benar.
+ [ ✓ ] 2. Membawa botol minum (tumbler) sendiri dari rumah guna mencegah pemborosan sampah plastik.
+ [ ✓ ] 3. Menutup rapat keran air tempat wudu dan mematikan lampu kelas saat tidak digunakan.
+ [ ✓ ] 4. Mengubah barang bekas menjadi barang bermanfaat dan membantu sesama yang membutuhkan.
+ [ ✓ ] 5. Menanam dan merawat minimal satu pohon serta tidak mencemari selokan air pemukiman.
+ [ ✓ ] 6. Berpartisipasi aktif dalam kegiatan kerja bakti dan menjaga kebersihan bumi Nusantara.
+
+Ikrar ini dibuat dengan penuh kesadaran dan tanggung jawab sebagai wujud rasa syukur
+kepada Tuhan Yang Maha Esa atas anugerah alam semesta.
+
+Mengetahui,                               Wonogiri, ......................... 2026
+Orang Tua / Wali Murid,                   Siswa Penjaga Bumi Cilik,
+
+
+
+( ................................... )   ( ................................... )
+
+                                Menyetujui,
+                          Guru PAI & Budi Pekerti,
+
+
+
+                          ( ................................... )
+                          NIP.
+========================================================================================
+Dokumen di atas adalah cetak biru master LENGKAP, DETAIL, UTUH, DENGAN PENAMBAHAN TOMBOL FULLSCREEN PROFESIONAL, PARAMETER TIMER DAN PENALTI SETIAP LEVEL, FORMULA DUAL-GAUGE, MEKANISME REMEDIAL, SERTA RESMI TERKUNCI TOTAL 100% PARIPURNA. Seluruh aspek pedagogis PAI & BP, teknis Three.js, WebRTC, audio Web Audio API, narasi Aoede, dan instrumen asesmen telah terpadu sempurna tanpa ada yang tercecer.
+
+
+
+
+
+
+
+
+
+LAKI LAKI :
+A professional adult male narrator with a rich, deep, resonant baritone voice. Warm, authoritative, confident, and naturally expressive. Excellent Indonesian pronunciation with crystal-clear articulation. Cinematic documentary-style delivery, controlled breathing, natural pauses, subtle emotional emphasis, and smooth vocal dynamics. Moderate speaking pace. Avoid robotic delivery, exaggerated bass, monotone speech, and unnatural intonation. Premium professional studio voice quality.
+
+PEREMPUAN :
+A professional adult female narrator with a beautiful, warm, elegant, and naturally melodic voice. Mature, soothing, confident, and emotionally expressive. Crystal-clear Indonesian pronunciation and excellent articulation. Cinematic storytelling delivery with natural pauses, graceful intonation, subtle emotional depth, and smooth vocal transitions. Moderate speaking pace. Avoid overly high-pitched tones, childish delivery, robotic speech, and monotone narration. Premium professional studio voice quality.
+
+
+LAKI LAKI PEREMPUAN
+VOICE CHARACTER: DEEP CINEMATIC MALE EDUCATIONAL NARRATOR.
+Use a mature adult male voice with a rich, deep, warm baritone tone. The voice should sound intelligent, authoritative, confident, calm, and highly professional.
+NARRATION STYLE:
+Professional cinematic documentary combined with engaging educational presentation. Speak naturally like an experienced documentary narrator and university lecturer explaining important knowledge to an audience.
+VOICE DELIVERY:
+•	Deep but clear vocal resonance.
+•	Warm and pleasant vocal texture.
+•	Excellent Indonesian pronunciation.
+•	Precise articulation of every word.
+•	Medium speaking pace, never rushed.
+•	Natural breathing and appropriate pauses.
+•	Dynamic intonation with meaningful emphasis.
+•	Smooth transitions between sentences.
+•	Slightly emphasize important concepts and key information.
+•	Maintain an engaging and confident delivery.
+EMOTIONAL EXPRESSION:
+Sound knowledgeable, inspiring, trustworthy, and engaging. Build curiosity when introducing a new topic. Use a more authoritative tone when explaining important facts.
+IMPORTANT:
+Do not sound robotic, monotonous, exaggerated, overly dramatic, or excessively bass-heavy. Avoid unnatural pauses and artificial pronunciation.
+LANGUAGE: Natural, fluent Bahasa Indonesia.
+AUDIO QUALITY: Premium professional studio narration, clean, balanced, and crystal clear.
+
